@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"> 
+    <title>Chat Room</title> 
+    <link rel="stylesheet" type="text/css" href="style.css"> 
+</head>
+<body>
+<div class="app">
+    <!-- ecran de connexion pour rejoindre le chat, affiché par défaut grâce à la classe "active" -->
+    <div class="screen join-screen active">
+        <div class="form">
+            <h2>Join chatroom</h2> 
+            <div class="form-input">
+                <label for="username"></label> <!-- Etiquette pour le champ de saisie du nom d'utilisateur  -->
+                <input type="text" id="username"> <!-- Champ de saisie ou l'utilisateur entre son nom d'utilisateur -->
+            </div>
+            <div class="form-input">
+                <button id="join-user">Join</button> <!-- Bouton pour rejoindre la salle de chat.  -->
+            </div>
+        </div>
+    </div>
+
+    <!-- ecran de chat principal, masquer par défaut (pas de classe active) -->
+    <div class="screen chat-screen">
+        <div class="header">
+            <div class="logo">Chatroom</div> <!-- titre de la salle de chat  -->
+            <button id="exit-chat">Exit</button> <!-- Bouton pour quitter la salle de chat -->
+        </div>
+        <div class="messages">
+            <!-- Les messages du chat s’afficheront ici dynamiquement, chaque message ajouté par le javascript -->
+        </div>
+        <div class="typebox">
+            <input type="text" id="message-input"> <!-- Champ de saisie pour que l'utilisateur entre son message. -->
+            <button id="send-message">Send</button> <!-- Bouton pour envoyer le message saisi dans le champ précédent. -->
+        </div>
+    </div>
+</div>
+
+<!-- bilblio Socket.IO nécessaire pour établir une connexion en temps reel entre le serveur et le client. -->
+<script type="text/javascript" src="/socket.io/socket.io.js"></script>
+<!-- Fichier JavaScript principal (code.js) qui contient tout ce qui est connexion envoie de message de l'app -->
+<script type="text/javascript" src="code.js"></script>
+</body>
+</html>

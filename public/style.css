@@ -1,0 +1,193 @@
+/*  les marges et les paddings pour tout les elements */
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+/* Style de base pour le body : utilise la police Roboto et centre le contenu horizontalement */
+body {
+    font-family: "Roboto", sans-serif;
+    height: 100vh; /* occupe toute la hauteur de la fenêtre */
+    display: flex;
+    justify-content: center;
+}
+
+/* conteneur pour l'application 'app' */
+.app {
+    position: fixed; 
+    width: 100%;
+    height: 100%;
+    max-width: 600px; 
+    background: #fff;
+    border-left: 1px solid #eee;
+    border-right: 1px solid #eee;
+}
+
+/* le elems .screen sont masquer par defaut */
+.app > .screen {
+    display: none;
+}
+
+/* pour afficher les elems de la classe active */
+.app > .screen.active {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+/* c'est le style du formulaire centré au milieu de l'ecran */
+.screen .form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 400px; 
+}
+
+/* le style des champs de saisie du formulaire */
+.screen .form-input {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+/* Style pour les titres du formulaire */
+.screen h2 {
+    margin-bottom: 20px;
+    font-size: 30px;
+    color: #BEC6A0;
+    border-bottom: 4px solid #555;
+    padding: 5px 0px;
+    display: inline-block;
+}
+
+/* Style des etiquettes de formulaire */
+.screen .form-input label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Style des champs de saisie */
+.screen .form-input input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #555;
+    font-size: 16px;
+}
+
+/* Style pour les boutons du formulaire */
+.screen .form-input button {
+    padding: 10px 20px;
+    background: #BEC6A0;
+    color: #eee;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+/* Style de  de la section chat */
+.chat-screen .header {
+    background: #BEC6A0;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+}
+
+/* Logo dans l'en-tete */
+.chat-screen .header .logo {
+    font-size: 18px;
+    color: #eee;
+    font-weight: 600;
+}
+
+/* Boutons dans l'en-tete */
+.chat-screen .header button {
+    padding: 5px 10px;
+    border: 1px solid #eee;
+    background: transparent;
+    color: #eee;
+    font-size: 15px;
+    cursor: pointer;
+    outline: none;
+}
+
+/* Conteneur pour les messages dans le chat */
+.chat-screen .message {
+    width: 100%;
+    height: calc(100% - 100px); /* Ajuste la hauteur pour exclure l'en-tete et la zone de saisie */
+    background: #f5f5f5;
+    overflow: auto; /* Permet le defilement */
+}
+
+/* Style pour chaque message */
+.chat-screen .messages .message {
+    display: flex;
+    padding: 10px;
+}
+
+/* Conteneur du contenu d'un message */
+.chat-screen .messages .message > div {
+    max-width: 80%;
+    background: #fff;
+    box-shadow: 0px 0px 20px 5px rgba(0, 0, 0, 0.05);
+    padding: 10px;
+}
+
+/* Style pour les messages envoyés par l'utilisateur */
+.chat-screen .messages .message.my-message {
+    justify-content: flex-end;
+}
+
+/* Style pour les messages reçus */
+.chat-screen .messages .message .other-message {
+    justify-content: flex-start;
+}
+
+/* Style pour le nom d'utilisateur dans un message */
+.chat-screen .messages .message .name {
+    font-size: 13px;
+    color: #555;
+    margin-bottom: 5px;
+}
+
+/* Style pour le texte d'un message */
+.chat-screen .messages .message .text {
+    word-wrap: break-word; /* Permet d'aller à la ligne automatiquement */
+}
+
+/* Style pour les notifications left et joined par exemple */
+.chat-screen .messages .update {
+    text-align: center;
+    padding: 10px;
+    font-style: italic;
+}
+
+/* Style pour la zone de saisie du message */
+.chat-screen .typebox {
+    width: 100%;
+    height: 50px;
+    display: flex;
+}
+
+/* Champ de saisie pour écrire un message */
+.chat-screen .typebox input {
+    flex: 1;
+    height: 50px;
+    font-size: 18px;
+}
+
+/* Bouton d'envoi du message */
+.chat-screen .typebox button {
+    width: 80px;
+    height: 100%;
+    font-size: 16px;
+    color: #eee;
+    background: #BEC6A0;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
